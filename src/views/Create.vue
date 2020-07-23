@@ -7,7 +7,7 @@
             <h1 class="primary--text pa-7">Create new Task</h1>
           </v-card-title>
           <v-card-text>
-            <v-list>
+            <v-list class="px-10">
               <v-list-item>
                 <v-list-item-content>
                   <v-text-field v-model="name" label="Name"/>
@@ -36,6 +36,9 @@
 </template>
 
 <script>
+// import axios from 'axios' // HTTP client
+
+
 export default {
   name: "Create",
   data: function () {
@@ -47,7 +50,8 @@ export default {
   },
   methods: {
     submit: function(){
-      // TODO: Send task to DB
+      // TODO: Send task to cloud function
+      // axios.post()
     }
   }
 };

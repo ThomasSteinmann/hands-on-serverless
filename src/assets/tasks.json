@@ -3,18 +3,18 @@
         "name": "Setup GUI",
         "description": "Set up simple Vuetify GUI fpr Hands-on Erfa",
         "status": "ToDo",
-        "img": "/favicon.ico"
+        "img": "https://ipt.ch/static/img/logo_ipt.e41536c42e31.svg"
     },
     {
         "name": "Setup Functions",
         "description": "Create a minimal Backend using serverless functions",
         "status": "ToDo",
-        "img": "/favicon.ico"
+        "img": "https://ipt.ch/static/img/logo_ipt.e41536c42e31.svg"
     },
     {
         "name": "Setup DB",
         "description": "Set up a developer DB in order to store task documents",
         "status": "ToDo",
-        "img": "/favicon.ico"
+        "img": "https://ipt.ch/static/img/logo_ipt.e41536c42e31.svg"
     }
 ]

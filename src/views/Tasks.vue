@@ -7,7 +7,7 @@
             <h1 class="primary--text pa-7">Tasks</h1>
           </v-card-title>
           <v-card-text>
-            <v-simple-table>
+            <v-simple-table class="px-10">
               <template v-slot:default>
                 <thead>
                   <tr>
@@ -51,6 +51,7 @@
 <script>
 // @ is an alias to /src
 import tasks from "@/assets/tasks.json";
+// import axios from 'axios' // HTTP client
 
 export default {
   name: "Tasks",
@@ -64,7 +65,8 @@ export default {
   },
   methods: {
     getTasks: function () {
-      // TODO: Get tasks from DB
+      // TODO: Get tasks from cloud function
+      // axios.get()
       return tasks;
     },
   },
