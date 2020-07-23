@@ -3,8 +3,8 @@
     <v-row>
       <v-col align="center">
         <v-card width="80%">
-          <v-card-title >
-            <h1 class="primary--text">Tasks</h1>
+          <v-card-title>
+            <h1 class="primary--text pa-7">Tasks</h1>
           </v-card-title>
           <v-card-text>
             <v-simple-table>
@@ -25,7 +25,9 @@
                 </thead>
                 <tbody>
                   <tr v-for="task in tasks" :key="task.name">
-                    <td><v-img contain max-width="50" :src="task.img"></v-img></td>
+                    <td>
+                      <v-img height="75" width="50" contain :src="task.img"></v-img>
+                    </td>
                     <td>{{ task.name }}</td>
                     <td>{{ task.description }}</td>
                     <td>{{ task.status }}</td>
@@ -34,6 +36,12 @@
               </template>
             </v-simple-table>
           </v-card-text>
+          <v-card-actions>
+            <v-spacer />
+            <v-btn to="/create" fab color="primary" class="mx-5 mb-5">
+              <v-icon>mdi-plus</v-icon>
+            </v-btn>
+          </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
@@ -42,22 +50,23 @@
 
 <script>
 // @ is an alias to /src
-import tasks from "@/assets/tasks.json"
+import tasks from "@/assets/tasks.json";
 
 export default {
-  name: "Home",
-  data: function() {
+  name: "Tasks",
+  data: function () {
     return {
-      tasks: []
-    }
+      tasks: [],
+    };
   },
   mounted() {
-    this.tasks = this.getTasks()
+    this.tasks = this.getTasks();
   },
   methods: {
-    getTasks: function() {
-      return tasks
-    }
+    getTasks: function () {
+      // TODO: Get tasks from DB
+      return tasks;
+    },
   },
 };
 </script>

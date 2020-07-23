@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <v-card>
-      <v-toolbar id="nav">
+    <v-card id="nav" name="Toolbar">
+      <v-toolbar >
         <v-toolbar-title>Hands-On Serverless</v-toolbar-title>
         <v-spacer/>
         <v-toolbar-title>
