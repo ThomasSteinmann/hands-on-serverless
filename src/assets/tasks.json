@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Setup GUI",
+        "description": "Set up simple Vuetify GUI fpr Hands-on Erfa",
+        "status": "ToDo",
+        "img": "/favicon.ico"
+    },
+    {
+        "name": "Setup Functions",
+        "description": "Create a minimal Backend using serverless functions",
+        "status": "ToDo",
+        "img": "/favicon.ico"
+    },
+    {
+        "name": "Setup DB",
+        "description": "Set up a developer DB in order to store task documents",
+        "status": "ToDo",
+        "img": "/favicon.ico"
+    }
+]
