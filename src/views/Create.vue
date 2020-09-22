@@ -27,7 +27,7 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer />
-            <v-btn color="primary" class="mx-5 mb-5">Submit</v-btn>
+            <v-btn color="secondary" to="/" class="mx-5 mb-5">Submit</v-btn>
           </v-card-actions>
         </v-card>
       </v-col>

@@ -21,6 +21,7 @@
                     <th class="text-left">
                       <h2>Status</h2>
                     </th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -31,6 +32,7 @@
                     <td>{{ task.name }}</td>
                     <td>{{ task.description }}</td>
                     <td>{{ task.status }}</td>
+                    <td><v-btn fab icon small><v-icon color="primary">mdi-minus</v-icon></v-btn></td>
                   </tr>
                 </tbody>
               </template>
@@ -38,7 +40,7 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer />
-            <v-btn to="/create" fab color="primary" class="mx-5 mb-5">
+            <v-btn to="/create" fab color="secondary" class="mx-5 mb-5">
               <v-icon>mdi-plus</v-icon>
             </v-btn>
           </v-card-actions>
