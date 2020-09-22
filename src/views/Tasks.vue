@@ -71,6 +71,10 @@ export default {
       // axios.get()
       return tasks;
     },
+    deleteTask: function (task) {
+      // TODO: Update tasks
+      return task
+    }
   },
 };
 </script>
