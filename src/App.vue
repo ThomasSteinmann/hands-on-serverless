@@ -13,14 +13,6 @@
           <v-img contain src="firebase.png" />
         </v-avatar>
 
-        <v-avatar class="mx-5" tile>
-          <v-img contain src="azure.png" />
-        </v-avatar>
-
-        <v-avatar tile>
-          <v-img contain src="aws.png" />
-        </v-avatar>
-
         <v-spacer />
 
         <v-toolbar-title>
