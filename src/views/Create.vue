@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="create">
     <v-row>
       <v-col align="center">
         <v-card width="80%">
@@ -10,24 +10,28 @@
             <v-list class="px-10">
               <v-list-item>
                 <v-list-item-content>
-                  <v-text-field v-model="name" label="Name"/>
+                  <v-text-field v-model="task.name" label="Name" />
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
                 <v-list-item-content>
-                  <v-text-field v-model="description" label="Description" />
+                  <v-text-field v-model="task.description" label="Description" />
                 </v-list-item-content>
               </v-list-item>
               <v-list-item>
                 <v-list-item-content>
-                  <v-select v-model="status" :items="['ToDo', 'Doing', 'Done']" label="Status" />
+                  <v-select
+                    v-model="task.status"
+                    :items="['ToDo', 'Doing', 'Done']"
+                    label="Status"
+                  />
                 </v-list-item-content>
               </v-list-item>
             </v-list>
           </v-card-text>
           <v-card-actions>
             <v-spacer />
-            <v-btn color="secondary" to="/" class="mx-5 mb-5">Submit</v-btn>
+            <v-btn color="secondary" @click="submit" class="mx-5 mb-5">Submit</v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -36,23 +40,26 @@
 </template>
 
 <script>
-// import axios from 'axios' // HTTP client
-
+import axios from "axios"; // HTTP client
 
 export default {
   name: "Create",
   data: function () {
     return {
-      name: null,
-      description: null,
-      status: null,
+      task: {
+        name: null,
+        description: null,
+        status: null,
+      },
     };
   },
   methods: {
-    submit: function(){
-      // TODO: Send task to cloud function
-      // axios.post()
-    }
-  }
+    submit: function () {
+      if (this.task.name && this.task.description && this.task.status) {
+        this.$router.push("/");
+        axios.post(`${process.env.VUE_APP_BACKEND_URL}/tasks`, this.task);
+      }
+    },
+  },
 };
 </script>
