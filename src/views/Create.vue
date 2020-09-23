@@ -56,8 +56,8 @@ export default {
   methods: {
     submit: function () {
       if (this.task.name && this.task.description && this.task.status) {
-        axios.post(`${process.env.VUE_APP_BACKEND_URL}/tasks`, this.task);
         this.$router.push("/");
+        axios.post(`${process.env.VUE_APP_BACKEND_URL}/tasks`, this.task);
       }
     },
   },
