@@ -1,9 +1,11 @@
 const functions = require('firebase-functions');
 const express = require('express');
 const admin = require('firebase-admin');
+const cors = require('cors');
 
 admin.initializeApp();
 const app = express();
+app.use(cors({ origin: true }));
 
 let tasksRef = admin.firestore().collection("TASKS")
 
@@ -12,7 +14,7 @@ app.get('/tasks', (req, res) => {  // Try getting these directly from frontend
         then(result => {
             lst = []
             result.forEach(doc => lst.push(doc.data()))
-            console.log(lst);
+            res.set({ 'Access-Control-Allow-Origin': '*' })
             res.json(lst)
         });
 })

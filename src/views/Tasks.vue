@@ -32,7 +32,11 @@
                     <td>{{ task.name }}</td>
                     <td>{{ task.description }}</td>
                     <td>{{ task.status }}</td>
-                    <td><v-btn fab icon small><v-icon color="primary">mdi-minus</v-icon></v-btn></td>
+                    <td>
+                      <v-btn fab icon small>
+                        <v-icon @click="deleteTask(task)" color="primary">mdi-minus</v-icon>
+                      </v-btn>
+                    </td>
                   </tr>
                 </tbody>
               </template>
@@ -52,8 +56,7 @@
 
 <script>
 // @ is an alias to /src
-import tasks from "@/assets/tasks.json";
-// import axios from 'axios' // HTTP client
+import axios from "axios"; // HTTP client
 
 export default {
   name: "Tasks",
@@ -63,18 +66,17 @@ export default {
     };
   },
   mounted() {
-    this.tasks = this.getTasks();
+    this.getTasks().then((tasks) => (this.tasks = tasks.data));
   },
   methods: {
     getTasks: function () {
-      // TODO: Get tasks from cloud function
-      // axios.get()
-      return tasks;
+      return axios.get(`${process.env.VUE_APP_BACKEND_URL}/tasks`);
     },
-    deleteTask: function (task) {
-      // TODO: Update tasks
-      return task
-    }
+    deleteTask: function (deletedTask) {
+      this.tasks = this.tasks.filter( task => task.name != deletedTask.name )
+      axios.delete(`${process.env.VUE_APP_BACKEND_URL}/tasks/${deletedTask.name}`)
+      return deletedTask;
+    },
   },
 };
 </script>
